@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 
 class CustomUser(AbstractUser):
@@ -18,6 +18,18 @@ class CustomUser(AbstractUser):
     # username 아이디
     # password1 비밀번호1
     # password2 비밀번호 확인
+
+    # chat gpt가 필요하데요
+    groups = models.ManyToManyField(
+        Group,
+        related_name='customuser_set',
+        blank=True
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name='customuser_set',
+        blank=True
+    )
     
     
 

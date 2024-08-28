@@ -124,5 +124,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'common.CustomUser'
+
 # 로그인 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
