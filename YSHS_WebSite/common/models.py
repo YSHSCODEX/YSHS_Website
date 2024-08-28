@@ -3,24 +3,21 @@ from django.contrib.auth.models import AbstractUser
 
 
 class CustomUser(AbstractUser):
-    gradeChoices = [
-        (1, '1st grade')
-        (2, '2nd grade')
-        (3, '3rd grade')
-    ]
-    classNumChoices = [
-        (1, 'class 1')
-        (2, 'class 2')
-        (3, 'class 3')
-        (4, 'class 4')
-        (5, 'class 5')
-        (6, 'class 6')
-        (7, 'class 7')
-        (8, 'class 8')
-        (9, 'class 9')
-    ]
-
-    grade = models.IntegerField(choices=[(i, f'{i}st grade') for i in range(1, 4)])
-    classNum = models.CharField(max_length=1, choices=classNumChoices)
-    studentNum = models.CharField
+    grade = models.IntegerField(verbose_name='학년',
+                                choices=[(i, f'{i}st grade') for i in range(1, 4)],)
+    classNum = models.IntegerField(verbose_name='반',
+                                   choices=[(i, f'class {i}') for i in range(1, 10)],)
+    studentNum = models.IntegerField(verbose_name='출석번호',
+                                     choices=[(i, f'number {i}') for i in range(1, 40)],)
+    # last_name 사용자 성 : 실명을 뜻함
+    # first_name 사용자 이름 - 이미 있음(성은 따로)-실명을 뜻함
+    birthDate = models.DateField(verbose_name='생년월일',)
+    email = models.EmailField(verbose_name='개인 이메일 주소',
+                              unique=True,
+                              max_length=254, blank=True, null=True,)
+    # username 아이디
+    # password1 비밀번호1
+    # password2 비밀번호 확인
+    
+    
 
