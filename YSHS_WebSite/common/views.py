@@ -7,6 +7,7 @@ def signup(request):
     return render(request, 'mainPage/home.html')
 
 def signup(request):
+    print(request.method)
     if request.method == "POST":
         form = CustomUserForm(request.POST) # CustomUserForm 사용할거임
         if form.is_valid():

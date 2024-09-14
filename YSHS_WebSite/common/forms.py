@@ -15,4 +15,4 @@ class CustomUserForm(UserCreationForm):
     '''
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = UserCreationForm.Meta.fields + ('grade', 'classNum', 'studentNum', 'birthDate', 'email')
+        fields = UserCreationForm.Meta.fields + ('grade', 'classNum', 'studentNum', 'birthDate', 'email', 'fAgreeCollectPersonInfor')
