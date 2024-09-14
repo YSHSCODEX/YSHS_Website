@@ -126,5 +126,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'common.CustomUser'
 
+# 커스텀 인증 입력
+AUTHENTICATIO_BACKENDS = ['common.backends.CustomBackend']
+
 # 로그인 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
