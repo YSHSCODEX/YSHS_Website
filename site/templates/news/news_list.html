@@ -1,7 +1,7 @@
 {% if news_list %}   <!-- news_list가 있다면 -->
     <ul>
     {% for contents in news_list %} <!--news_list를 순회하며 순차적으로 하나씩 contents에 대입-->
-        <li><a href="/pybo/{{ contents.id }}/">{{ contents.subject }}</a></li>
+        <li><a href="{% url 'news:detail' contents.id %}">{{ contents.subject }}</a></li>
     {% endfor %}
     </ul> <!--{{contents.id}}는 for문에 의해 대입된 contents 객체의 id 번호를 출력--><!--{{contents.subject}}는 for문에 의해 대입된 contents 객체의 제목을 출력-->
 

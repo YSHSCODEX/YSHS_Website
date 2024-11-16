@@ -5,3 +5,6 @@ class contents(models.Model):
     content = models.TextField()
     create_date = models.DateTimeField()
     writer = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.subject
