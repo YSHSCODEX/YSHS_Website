@@ -122,3 +122,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+#미디어 파일 경로 설정
+MEDIA_URL = '/media/' #브라우저에서 파일에 접근할 때의 URL
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #서버에 파일이 저장될 경로
